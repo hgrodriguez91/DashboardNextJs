@@ -9,7 +9,7 @@ import ReactECharts from 'echarts-for-react';
 const WeeklyOverview = () => {
 
     return <Box sx={{ flex: 2, maxHeight: '100px' }}>
-        <Card sx={{ borderRadius: '10px' }} elevation={4}>
+        <Card sx={{ borderRadius: '10px', padding:'30px' }} elevation={4}>
             <CardHeader
                 action={<>
                     <IconButton >
@@ -31,17 +31,38 @@ export default WeeklyOverview;
 
 export const option = {
     xAxis: {
+        show: false,
         type: 'category',
+
     },
     yAxis: {
-        type: 'value'
+        type: 'value',
+        show: false
     },
-    
+    axisPointer: {
+        snap: false,
+        lineStyle: {
+            type: 'solid',
+            height: 500
+        }
+    },
+    lineStyle: {
+        color: '#c890e7',
+    },
+    legend: {
+        show: true
+    },
     series: [
         {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            label: 'Shit',
+            data: [2, 3, 1, 5, 2, 3, 2, 4],
             type: 'line',
-            smooth: true
+            smooth: true,
+            showSymbol: false,
+            lineStyle: {
+                width: 6
+            }
+
         }
     ]
 };

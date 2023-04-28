@@ -34,7 +34,7 @@ export default function SideBarMenu() {
     return (
 
         <Box sx={{ flex: 1, backgroundColor: '#013566', pt: '20px' }}>
-            <MenuItemComponent title="Personal Information" style={{ width: '100%', background: 'transparent', color: '#fff' }}>
+            <MenuItemComponent title="Home" style={{ width: '100%', background: 'transparent', color: '#fff' }}>
                 <HomeIcon sx={{ color: '#fff' }} />
             </MenuItemComponent>
 
@@ -42,9 +42,12 @@ export default function SideBarMenu() {
                 sx={{ width: '100%', background: 'transparent', color: '#fff' }}
                 component="nav"
             >
-                <Typography variant='caption' sx={{ paddingLeft: '20px' }}>
-                    YOUR ACCOUNT
-                </Typography>
+                <Box sx={{ mt: '20px', mb: '20px' }}>
+                    <Typography variant='caption' sx={{ paddingLeft: '20px' }}>
+                        YOUR ACCOUNT
+                    </Typography>
+                </Box>
+
                 <MenuItemComponent title="Transfers">
                     <SwapHorizIcon sx={{ color: '#fff' }} />
                 </MenuItemComponent>
@@ -74,9 +77,11 @@ export default function SideBarMenu() {
             <List
                 sx={{ width: '100%', background: 'transparent', color: '#fff' }}
                 component="nav" >
-                <Typography variant='caption' sx={{ paddingLeft: '20px' }}>
-                    GENERAL INFORMATION
-                </Typography>
+                <Box sx={{ mt: '20px', mb: '20px' }}>
+                    <Typography variant='caption' sx={{ paddingLeft: '20px' }}>
+                        GENERAL INFORMATION
+                    </Typography>
+                </Box>
                 <MenuItemComponent title="Personal Information">
                     <PersonOutlineIcon sx={{ color: '#fff' }} />
                 </MenuItemComponent>

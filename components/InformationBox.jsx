@@ -32,21 +32,21 @@ const InformationBox = () => {
         { id: 4, name: 'Acta de Matrimonio', status: 'Signed' }
     ];
 
-    const columns = [{        
+    const columns = [{
         flex: 0.25,
         field: "name",
-        headerName: 'Documents',
+        headerName: 'DOCUMENTS',
         renderCell: ({ row }) => <Typography variant='body1'>{row?.name}</Typography>
     }, {
         flex: 0.25,
         field: "status",
-        headerName: 'Status',
+        headerName: 'STATUS',
         renderCell: ({ row }) => <Chip label={row?.status} sx={getStyleChip(row.status)} />
     },
     {
         field: "id",
         flex: 0.25,
-        headerName: 'Acciones',
+        headerName: 'ACTIONS',
         renderCell: ({ row }) => (
             <Box color={'GrayText'}>
                 <IconButton>
@@ -77,7 +77,7 @@ const InformationBox = () => {
             columns={columns}
             disableSelectionOnClick
             disableRowSelectionOnClick
-            sx={{ borderRadius: '20px', mt: '20px', overflow: 'hidden' }}
+            sx={{ borderTopRightRadius: '20px',borderTopLeftRadius: '20px', mt: '20px', overflow: 'hidden', borderLeftColor: 'transparent', borderRightColor: 'transparent', borderTopColor: 'transparent' }}
             hideFooter
             checkboxSelection
         />
