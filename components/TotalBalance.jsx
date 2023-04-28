@@ -1,10 +1,7 @@
 import { MoreVertOutlined } from "@mui/icons-material";
 import { Card, CardHeader, IconButton } from "@mui/material";
 import { Box } from "@mui/system";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-
-ChartJS.register(ArcElement, Tooltip, Legend);
+import ReactECharts from 'echarts-for-react';
 
 const TotalBalance = () => {
 
@@ -19,34 +16,39 @@ const TotalBalance = () => {
                 }
                 title={'Total Balance'}
             />
-            <Doughnut data={data} options={options} />
-
+  
+ <ReactECharts option={option} />
         </Card>
     </Box>
 }
 
 export default TotalBalance;
 
-export const data = {
-    labels: ['Equities', 'Fixed Income', 'Hedge Funds'],
-    datasets: [
-        {
-            data: [12, 19, 3,],
-            backgroundColor: [
-                '#ffc0ba',
-                '#adebe1',
-                '#ffe189',
-            ],
-            borderWidth: 1,
-        },
-    ],
-};
 
-export const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'bottom',
+
+export const option = {
+    tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      top: '5%',
+      left: 'center'
+    },
+    series: [
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: 'center'
         },
-    }
-}
+        data: [
+          { value: 1048, name: 'Equities' },
+          { value: 735, name: 'Fixed Income' },
+          { value: 484, name: 'Hedge Funds' },
+        ]
+      }
+    ]
+  };
